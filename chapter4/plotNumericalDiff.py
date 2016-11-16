@@ -20,6 +20,7 @@ if __name__ == "__main__":
 	y = function_1(x)
 	plt.xlabel("x")
 	plt.ylabel("f(x)")
+	plt.ylim(0, 6);
 	plt.plot(x, y, "b-")
 	numerical_diff_plot(10, function_1)
 	plt.show()

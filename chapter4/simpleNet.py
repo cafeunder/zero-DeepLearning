@@ -3,7 +3,7 @@ from chapter3.softmax import softmax
 from chapter4.crossEntropyError import cross_entropy_error
 from chapter4.numericalGradient import numerical_gradient
 
-class simpleNet:
+class SimpleNet:
 	def __init__(self):
 		self.W = np.random.randn(2, 3)
 
@@ -18,7 +18,7 @@ class simpleNet:
 		return loss
 
 if __name__ == "__main__":
-	net = simpleNet()
+	net = SimpleNet()
 	print(net.W)
 
 	x = np.array([0.6, 0.9])

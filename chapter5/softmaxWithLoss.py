@@ -1,7 +1,7 @@
 from chapter3.softmax import softmax
 from chapter4.crossEntropyError import cross_entropy_error
 
-class SoftMaxWithLoss:
+class SoftmaxWithLoss:
 	def __init__(self):
 		self.loss = None
 		self.y = None

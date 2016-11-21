@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pylab as plt
 from dataset.mnist import load_mnist
-from chapter4.twoLayerNet import TwoLayerNet
+from chapter5.twoLayerNet import TwoLayerNet
 
-(x_train, t_train), (x_test, t_test) = load_mnist(normalize=True)
+(x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
 train_loss_list = []
 
 iters_num = 10000
@@ -18,7 +18,7 @@ for i in range(iters_num):
 	x_batch = x_train[batch_mask]
 	t_batch = t_train[batch_mask]
 
-	grad = network.numerical_gradient(x_batch, t_batch)
+	grad = network.gradient(x_batch, t_batch)
 
 	for key in ("W1", "b1", "W2", "b2"):
 		network.params[key] -= learning_rate * grad[key]

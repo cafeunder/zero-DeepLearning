@@ -14,8 +14,7 @@ class AdaGrad:
 
 		for key in params.keys():
 			self.h[key] += grads[key] * grads[key]
-			sqrt = np.sqrt(self.h[key] + 1e-7)
-			params[key] -= self.lr * grads[key] / sqrt
+			params[key] -= self.lr * grads[key] / (np.sqrt(self.h[key]) + 1e-7)
 
 if __name__ == "__main__":
 	optimize(AdaGrad())

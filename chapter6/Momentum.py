@@ -7,6 +7,9 @@ class Momentum:
 		self.momentum = momentum
 		self.v = None
 
+	def dispose(self):
+		self.v = None
+
 	def update(self, params, grads):
 		# 初期実行
 		if self.v is None:

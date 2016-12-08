@@ -14,7 +14,7 @@ def optimize(optimizer):
 	limit = int(1e+5)
 
 	gen = 0
-	noOfTrial = 100
+	noOfTrial = 10
 	# 10回試行の平均
 	for trial in range(noOfTrial):
 		# 最適化メイン
@@ -29,7 +29,10 @@ def optimize(optimizer):
 			# 終了判定
 			if function(p["x"], p["y"]) < epsilon:
 				gen += i
+				print("Trial No.{0} : {1}".format(trial, i))
 				break
 		else: gen += limit
+
+		optimizer.dispose()
 
 	print(gen / noOfTrial);
